@@ -51,16 +51,9 @@ sub CheckGroupPermission {
         }
     }
 
-    # Get group ID from name.
-    my $GroupID = $Kernel::OM->Get('Kernel::System::Group')->GroupLookup(
-        Group => $Param{GroupName},
-    );
-
-    return 0 if !$GroupID;
-
     my $HasPermission = $Kernel::OM->Get('Kernel::System::Group')->PermissionCheck(
         UserID    => $Param{UserID},
-        GroupID   => $GroupID,
+        GroupName => $Param{GroupName},
         Type      => $Param{Permission},
     );
 

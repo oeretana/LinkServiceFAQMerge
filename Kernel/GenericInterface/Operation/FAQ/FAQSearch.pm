@@ -62,12 +62,12 @@ sub Run {
     my %States = $FAQObject->StateList(
         UserID => $UserID,
     );
-    my @AllStateIDs = keys %States;
+    my @AllStateIDs = sort { $a <=> $b } keys %States;
 
     # Build search params.
     my %SearchParams = (
-        States => { StateIDs => \@AllStateIDs },
-        UserID => $UserID,
+        StateIDs => \@AllStateIDs,
+        UserID   => $UserID,
     );
 
     # Optional params — only include if provided.
