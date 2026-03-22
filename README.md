@@ -105,6 +105,8 @@ Installing the OPM makes all 11 operations available to OTOBO's Generic Interfac
 OTOBO will prompt you for a name during import. If you leave it blank, the webservice will be named `LinkServiceFAQMergeConnectorREST` (taken from the file name). You can also rename it later in **Admin → Web Services → Edit**.
 
 > **Note:** OTOBO's YAML parser rejects non-ASCII characters. If you modify the YAML, keep all description fields ASCII-only or the import will fail with `Loading the YAML string failed`.
+>
+> **Note:** The included YAML configures each operation with explicit `RequestMethod` restrictions (e.g., GET-only for read operations, POST-only for write operations). This is a recommended default, but `RequestMethod` is a webservice configuration in OTOBO — not enforced by the package itself. You can edit the YAML before importing, or adjust it afterwards in the webservice editor, to allow additional methods or remove restrictions entirely.
 
 **Option B — add operations to an existing webservice:**
 
