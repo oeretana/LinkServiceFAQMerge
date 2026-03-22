@@ -94,14 +94,17 @@ sudo -u otobo perl bin/otobo.Console.pl Admin::Package::List | grep LinkService
 
 ### Post-installation: register the webservice
 
-The operations are installed but not yet exposed over HTTP — you need to attach them to a Generic Interface webservice.
+Installing the OPM makes all 11 operations available to OTOBO's Generic Interface, but does not expose them over HTTP automatically. You must attach them to a Generic Interface webservice — either by importing a ready-made YAML or by adding the operations to an existing webservice.
 
 **Option A — import the included YAML template (quickest):**
 
-1. Go to **Admin → Web Services → Add Web Service → Import**.
-2. Select `development/webservices/LinkServiceFAQMergeConnectorREST.yml`.
+1. Clone this repository (or download the source archive from the release page).
+2. Go to **Admin → Web Services → Add Web Service → Import**.
+3. Upload `development/webservices/LinkServiceFAQMergeConnectorREST.yml`.
 
-> **Note:** The YAML file must contain only ASCII characters in all description fields. Non-ASCII characters (accented letters, etc.) cause the OTOBO YAML parser to fail with `Loading the YAML string failed`.
+OTOBO will create a new webservice named `LinkServiceFAQMergeConnectorREST` (taken from the file name). You can rename it afterwards in **Admin → Web Services → Edit**.
+
+> **Note:** OTOBO's YAML parser rejects non-ASCII characters. If you modify the YAML, keep all description fields ASCII-only or the import will fail with `Loading the YAML string failed`.
 
 **Option B — add operations to an existing webservice:**
 
