@@ -102,7 +102,7 @@ Installing the OPM makes all 11 operations available to OTOBO's Generic Interfac
 2. Go to **Admin → Web Services → Add Web Service → Import**.
 3. Upload `development/webservices/LinkServiceFAQMergeConnectorREST.yml`.
 
-OTOBO will create a new webservice named `LinkServiceFAQMergeConnectorREST` (taken from the file name). You can rename it afterwards in **Admin → Web Services → Edit**.
+OTOBO will prompt you for a name during import. If you leave it blank, the webservice will be named `LinkServiceFAQMergeConnectorREST` (taken from the file name). You can also rename it later in **Admin → Web Services → Edit**.
 
 > **Note:** OTOBO's YAML parser rejects non-ASCII characters. If you modify the YAML, keep all description fields ASCII-only or the import will fail with `Loading the YAML string failed`.
 
